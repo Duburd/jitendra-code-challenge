@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-MapApp/Pods-MapApp-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Apollo/Apollo.framework
+${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework
+${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework

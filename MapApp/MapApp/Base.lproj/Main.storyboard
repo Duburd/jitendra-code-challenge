@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iD6-e3-PM8">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="MAMapController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MAMapController" customModule="MapApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fZN-jh-GiB" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J0l-Og-Alw" customClass="JKCardView" customModule="MapApp" customModuleProvider="target">
+                                <rect key="frame" x="31" y="64" width="352" height="50"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Gff-60-Wkw">
+                                        <rect key="frame" x="5" y="5" width="342" height="40"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Krg-IT-kAh">
+                                                <rect key="frame" x="0.0" y="11" width="20" height="18"/>
+                                                <color key="tintColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="226-dC-ZYD"/>
+                                                    <constraint firstAttribute="width" secondItem="Krg-IT-kAh" secondAttribute="height" multiplier="1:1" id="DXX-KI-kj9"/>
+                                                </constraints>
+                                            </imageView>
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RS4-KO-aW3">
+                                                <rect key="frame" x="30" y="11.5" width="312" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wiB-P6-68w">
+                                        <rect key="frame" x="5" y="5" width="342" height="40"/>
+                                        <connections>
+                                            <action selector="onSearchPlace:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P5F-Jv-g96"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="Gff-60-Wkw" firstAttribute="top" secondItem="J0l-Og-Alw" secondAttribute="top" constant="5" id="6tu-Yz-h15"/>
+                                    <constraint firstItem="wiB-P6-68w" firstAttribute="trailing" secondItem="Gff-60-Wkw" secondAttribute="trailing" id="DzS-LL-3u7"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gff-60-Wkw" secondAttribute="trailing" constant="5" id="X8O-bU-tkF"/>
+                                    <constraint firstItem="wiB-P6-68w" firstAttribute="leading" secondItem="Gff-60-Wkw" secondAttribute="leading" id="grS-Oe-5YR"/>
+                                    <constraint firstItem="wiB-P6-68w" firstAttribute="top" secondItem="Gff-60-Wkw" secondAttribute="top" id="jAh-oN-jwt"/>
+                                    <constraint firstItem="Gff-60-Wkw" firstAttribute="leading" secondItem="J0l-Og-Alw" secondAttribute="leading" constant="5" id="lZf-Mj-ZYf"/>
+                                    <constraint firstAttribute="height" constant="50" id="oHc-Gf-ZdC"/>
+                                    <constraint firstAttribute="bottom" secondItem="Gff-60-Wkw" secondAttribute="bottom" constant="5" id="oqF-0H-WzO"/>
+                                    <constraint firstItem="wiB-P6-68w" firstAttribute="bottom" secondItem="Gff-60-Wkw" secondAttribute="bottom" id="ysY-Ql-UIK"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isShadow" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowCornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="J0l-Og-Alw" firstAttribute="centerX" secondItem="fZN-jh-GiB" secondAttribute="centerX" id="7np-8e-Mna"/>
+                            <constraint firstItem="J0l-Og-Alw" firstAttribute="top" secondItem="fZN-jh-GiB" secondAttribute="top" constant="64" id="Cxx-Hb-EnW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fZN-jh-GiB" secondAttribute="trailing" id="EiW-il-e0A"/>
+                            <constraint firstItem="J0l-Og-Alw" firstAttribute="width" secondItem="fZN-jh-GiB" secondAttribute="width" multiplier="0.85" id="PqR-0q-Arf"/>
+                            <constraint firstItem="fZN-jh-GiB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SN0-Rq-RNP"/>
+                            <constraint firstAttribute="bottom" secondItem="fZN-jh-GiB" secondAttribute="bottom" id="bMq-xJ-raa"/>
+                            <constraint firstItem="fZN-jh-GiB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="x6u-7z-zwZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="eiA-Kk-bUj"/>
+                    <connections>
+                        <outlet property="addressTF" destination="RS4-KO-aW3" id="czE-Q3-B4X"/>
+                        <outlet property="mapView" destination="fZN-jh-GiB" id="HCC-nI-jrn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="861" y="139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="IJW-xS-Jot">
+            <objects>
+                <navigationController storyboardIdentifier="MAMapNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="iD6-e3-PM8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cYM-sq-kwN">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="4wI-Lu-o11"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cKP-4C-Sap" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
+    </resources>
+</document>
